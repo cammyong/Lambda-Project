@@ -5,11 +5,20 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
   definition = <<EOF
   {
     "Comment": "Invoke AWS Lambda from AWS Step Functions with Terraform",
-    "StartAt": "HelloWorld",
+    "StartAt": "Check File",
     "States": {
-      "HelloWorld": {
+      "Check File": {
         "Type": "Task",
-        "Resource": "${aws_lambda_function.lambda_function.arn}",
+        "Resource": "${aws_lambda_function.check_file_lambda.arn}",
+        "Catch": [ {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "Report Error"
+        } ],
+        "End": true
+      },
+      "Report Error": {
+        "Type": "Task",
+        "Resource": "${aws_lambda_function.report_error_lambda.arn}",       
         "End": true
       }
     }
@@ -49,7 +58,10 @@ resource "aws_iam_role_policy" "step_function_policy" {
           "lambda:InvokeFunction"
         ],
         "Effect": "Allow",
-        "Resource": "${aws_lambda_function.lambda_function.arn}"
+        "Resource": [
+          "${aws_lambda_function.check_file_lambda.arn}",
+          "${aws_lambda_function.report_error_lambda.arn}"
+        ]
       }
     ]
   }
