@@ -19,7 +19,10 @@ resource "aws_sfn_state_machine" "sfn_state_machine" {
       "Report Error": {
         "Type": "Task",
         "Resource": "${aws_lambda_function.report_error_lambda.arn}",       
-        "End": true
+        "Next": "Fail State"
+      },
+      "Fail State": {
+        "Type": "Fail"
       }
     }
   }
