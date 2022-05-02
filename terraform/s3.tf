@@ -93,6 +93,7 @@ resource "aws_lambda_function" "s3_copy_function" {
    }
 }
 
+# Notification when a file is added in our S3 bucket
 # resource "aws_s3_bucket_notification" "bucket_terraform_notification" {
 #    bucket = "${aws_s3_bucket.source_bucket.id}"
 #    lambda_function {
