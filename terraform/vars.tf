@@ -16,3 +16,13 @@ variable "step_function_name" {
   type = string
   default = "test_step_function"
 }
+
+variable "env_name" {
+    default = "s3-lambda-copy"
+    description = "Terraform environment name"
+}
+
+variable "aws_region" {
+    default = "eu-central-1"
+    description = "AWS Region to deploy to"
+}
