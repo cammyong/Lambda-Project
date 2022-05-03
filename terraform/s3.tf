@@ -4,10 +4,10 @@ resource "aws_s3_bucket" "source_bucket" {
    force_destroy = true
 }
 
-resource "aws_s3_bucket" "destination_bucket" {
-   bucket = "${var.env_name}-dst-bucket"
-   force_destroy = true
-}
+# resource "aws_s3_bucket" "destination_bucket" {
+#    bucket = "${var.env_name}-dst-bucket"
+#    force_destroy = true
+# }
 
 
 
@@ -85,12 +85,12 @@ resource "aws_lambda_function" "s3_copy_function" {
    handler = "index.handler"
    runtime = "python3.8"
 
-   environment {
-       variables = {
-           DST_BUCKET = "${var.env_name}-dst-bucket",
-           REGION = "${var.aws_region}"
-       }
-   }
+#    environment {
+#        variables = {
+#            DST_BUCKET = "${var.env_name}-dst-bucket",
+#            REGION = "${var.aws_region}"
+#        }
+#    }
 }
 
 # Notification when a file is added in our S3 bucket
