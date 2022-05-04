@@ -68,3 +68,28 @@ data "aws_iam_policy_document" "lambda_assume_role_policy_document" {
     }
   }
 }
+
+resource "aws_iam_role_policy" "lambda_policy" {
+  name   = "lambda-policy"
+  role   = aws_iam_role.lambda_assume_role.id
+  policy = data.aws_iam_policy_document.lambda_policy_document.json
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
+
+data "aws_iam_policy_document" "lambda_policy_document" {
+  version = "2012-10-17"
+
+  statement {
+    sid     = "LambdaPrivileges"
+    effect  = "Allow"
+    actions = [
+      "logs:CreateLogGroup",
+      "logs:CreateLogStream",
+      "logs:PutLogEvents"
+    ]
+    resources = ["*"]
+  }
+}
