@@ -86,6 +86,7 @@ data "aws_iam_policy_document" "lambda_policy_document" {
     sid     = "LambdaPrivileges"
     effect  = "Allow"
     actions = [
+      "s3:GetObject",
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
       "logs:PutLogEvents"
