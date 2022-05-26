@@ -1,8 +1,30 @@
 # Source s3 bucket and destination
 resource "aws_s3_bucket" "source_bucket" {
-   bucket = "${var.env_name}-src-bucket"
+   bucket = "${var.env_name}-src-bucket1"
+   #key = "profile"
    force_destroy = true
 }
+
+# Upload a single file into s3
+resource "aws_s3_object" "object" {
+   bucket = aws_s3_bucket.source_bucket.id
+   key    = "file.txt"
+   acl    = "private"  # or can be "public-read"
+   source = "myfile/file.txt"
+   etag = filemd5("myfile/file.txt")
+
+}
+
+# Uploading multiple files into s3
+resource "aws_s3_object" "object1" {
+for_each = fileset("myfile/", "*")
+bucket = aws_s3_bucket.source_bucket.id
+key = each.value
+source = "myfile/${each.value}"
+etag = filemd5("myfile/${each.value}")
+
+}
+
 
 # resource "aws_s3_bucket" "destination_bucket" {
 #    bucket = "${var.env_name}-dst-bucket"
