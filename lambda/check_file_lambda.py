@@ -3,7 +3,7 @@ import boto3
 
 s3_client = boto3.client('s3')
 bucket = "s3-lambda-copy-src-bucket1"
-key = "file2.txt"
+key = "file4.txt"
 
 
 LOGGER = logging.getLogger()
@@ -23,3 +23,12 @@ def handler(event, context):
     # data = response['Body'].read() 
     event['key'] = 'value'
     return event
+
+
+
+
+
+
+
+
+

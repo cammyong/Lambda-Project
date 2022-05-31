@@ -86,6 +86,8 @@ data "aws_iam_policy_document" "lambda_policy_document" {
     sid     = "LambdaPrivileges"
     effect  = "Allow"
     actions = [
+      "sns:*",
+      "s3:ListBucket",
       "s3:GetObject",
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
@@ -94,3 +96,4 @@ data "aws_iam_policy_document" "lambda_policy_document" {
     resources = ["*"]
   }
 }
+
