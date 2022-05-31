@@ -3,7 +3,7 @@ import boto3
 
 s3_client = boto3.client('s3')
 bucket = "s3-lambda-copy-src-bucket1"
-key = "file4.txt"
+key = "file7.txt"
 
 
 LOGGER = logging.getLogger()
