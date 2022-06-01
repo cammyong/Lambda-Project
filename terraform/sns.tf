@@ -29,3 +29,12 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
   protocol  = "email"
   endpoint  = local.emails[count.index]
 }
+
+# resource "aws_lambda_permission" "with_sns" {
+#     statement_id = "AllowExecutionFromSNS"
+#     action = "lambda:InvokeFunction"
+#     function_name = "${aws_lambda_function.check_file_lambda.arn}"
+#     principal = "sns.amazonaws.com"
+#     source_arn = "${aws_sns_topic.topic.arn}"
+# }
+
