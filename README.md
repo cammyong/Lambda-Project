@@ -6,7 +6,7 @@ Also, AWS Lambda which is a Function-as-a-Service platform by Amazon Web Service
 
 
 Diagram
-![Basic StepFunction (1)](https://user-images.githubusercontent.com/34858886/171946733-11ac070d-f49d-4a44-af41-9f03780e6843.png)
+![Basic StepFunction (2)](https://user-images.githubusercontent.com/34858886/171947901-1d6f25de-3ce9-4fdc-ae72-5647baac1519.png)
 
 Deploy
 Since we have defined the infrastructure for an AWS Lambda and AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below.
