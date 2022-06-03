@@ -35,7 +35,7 @@ Go to project folder
 cd terraform
 
 
-`terraform init`    # it will perform initialization step
-terraform plan    # see the execution plan of terraform
-terraform apply   # apply the infrastructure in AWS
-terraform destroy # destroy the infrastructure in AWS
+`terraform init`   # it will perform initialization step
+`terraform plan`   # see the execution plan of terraform
+`terraform apply`   # apply the infrastructure in AWS
+`terraform destroy` # destroy the infrastructure in AWS
