@@ -6,7 +6,7 @@ Also, AWS Lambda which is a Function-as-a-Service platform by Amazon Web Service
 
 
 Diagram
-![Basic StepFunction](https://user-images.githubusercontent.com/34858886/171869449-2a35a652-b58b-4fea-9c57-6f06040aed34.png)
+![Basic StepFunction (1)](https://user-images.githubusercontent.com/34858886/171946733-11ac070d-f49d-4a44-af41-9f03780e6843.png)
 
 Deploy
 Since we have defined the infrastructure for an AWS Lambda and AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below.
@@ -35,7 +35,7 @@ terraform init  # To initialize
 terraform plan  # View the execution plan of terraform
 ```  
 ```
-terraform apply  # apply the infrastructure in AWS
+terraform apply  # Apply the infrastructure in AWS
 ``` 
 ```
 terraform destroy  # Destroy the infrastructure in AWS
