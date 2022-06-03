@@ -17,6 +17,15 @@ Since we have defined the infrastructure for an AWS Lambda and an AWS Step Funct
 
 Steps
 
+* Clone the project
+```
+git clone https://github.com/UbongMichael/Lambda-Project.git
+```
+
+* Change to the project folder
+```
+cd terraform
+```
 * It will perform initialization step
 ```
 terraform init
