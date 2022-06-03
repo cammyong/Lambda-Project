@@ -17,14 +17,22 @@ Since we have defined the infrastructure for an AWS Lambda and an AWS Step Funct
 
 Steps
 
-# it will perform initialization step
-`terraform init`  
+* It will perform initialization step
+```
+terraform init
+```  
 
- # see the execution plan of terraform
-`terraform plan`  
+ * View the execution plan of terraform
+```
+terraform plan
+```  
 
-# apply the infrastructure in AWS
-`terraform apply` 
+* Apply the infrastructure in AWS
+```
+terraform apply
+``` 
 
-# destroy the infrastructure in AWS
-`terraform destroy` 
+* Destroy the infrastructure in AWS
+```
+terraform destroy
+``` 
