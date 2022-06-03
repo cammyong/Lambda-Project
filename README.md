@@ -10,32 +10,21 @@ Diagram
 
 Deploy
 Since we have defined the infrastructure for an AWS Lambda and an AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below.
-.
-├── lambda.tf
-├── lambda_zip
-│   ├── check_file_lambda.zip
-│   └── report_error_lambda.zip
-├── main.tf
-├── myfile
-│   ├── file.txt
-│   ├── file2.txt
-│   └── file3.txt
-├── output.tf
-├── s3.tf
-├── sns.tf
-├── step_function.tf
-├── terraform.tfstate
-├── terraform.tfstate.backup
-└── vars.tf
+
+<img width="297" alt="Screenshot 2022-06-03 at 21 27 27" src="https://user-images.githubusercontent.com/34858886/171936331-d8dc5688-4b66-4fa3-a6ea-791220da902e.png">
+
+
 
 Steps
-Clone this repo using command
 
-Go to project folder
-cd terraform
+# it will perform initialization step
+`terraform init`  
 
+ # see the execution plan of terraform
+`terraform plan`  
 
-`terraform init`   # it will perform initialization step
-`terraform plan`   # see the execution plan of terraform
-`terraform apply`   # apply the infrastructure in AWS
-`terraform destroy` # destroy the infrastructure in AWS
+# apply the infrastructure in AWS
+`terraform apply` 
+
+# destroy the infrastructure in AWS
+`terraform destroy` 
