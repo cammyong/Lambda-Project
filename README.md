@@ -15,7 +15,7 @@ Since we have defined the infrastructure for an AWS Lambda and an AWS Step Funct
 
 
 
-Steps
+Steps 
 
 * Clone the project
 ```
@@ -26,6 +26,8 @@ git clone https://github.com/UbongMichael/Lambda-Project.git
 ```
 cd terraform
 ```
+* Run the following command to initialize and deploy the infrastructure.
+
 * It will perform initialization step
 ```
 terraform init
@@ -38,7 +40,7 @@ terraform plan
 
 * Apply the infrastructure in AWS
 ```
-terraform apply
+terraform apply  # apply
 ``` 
 
 * Destroy the infrastructure in AWS
