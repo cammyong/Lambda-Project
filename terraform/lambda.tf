@@ -89,8 +89,8 @@ data "aws_iam_policy_document" "lambda_policy_document" {
   version = "2012-10-17"
 
   statement {
-    sid     = "LambdaPrivileges"
-    effect  = "Allow"
+    sid    = "LambdaPrivileges"
+    effect = "Allow"
     actions = [
       "sns:*",
       "s3:ListBucket",

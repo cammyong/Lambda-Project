@@ -49,10 +49,10 @@ resource "aws_iam_role" "step_function_role" {
 }
 
 resource "aws_iam_role_policy" "step_function_policy" {
-  name    = "${var.step_function_name}-policy"
-  role    = aws_iam_role.step_function_role.id
+  name = "${var.step_function_name}-policy"
+  role = aws_iam_role.step_function_role.id
 
-  policy  = <<-EOF
+  policy = <<-EOF
   {
     "Version": "2012-10-17",
     "Statement": [

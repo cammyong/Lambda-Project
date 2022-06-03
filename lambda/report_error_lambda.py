@@ -1,3 +1,8 @@
+"""
+This lambda erorr code would check the s3 bucket if an object exist. 
+It will output error if the file doesn't exist and also sent a notification to an email address.
+"""
+
 import logging
 import boto3
 import os

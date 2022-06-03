@@ -1,9 +1,14 @@
+"""
+This lambda python would check the s3 bucket if an object exist and would output success.
+"""
+
 import logging
 import boto3
 
+
 s3_client = boto3.client('s3')
-bucket = "s3-lambda-copy-src-bucket1"
-key = "file5.txt"
+bucket = "s3-lambda-copy-src-bucket2"
+key = "file5.txt"  # file in s3 bucket that would be verified
 
 
 LOGGER = logging.getLogger()

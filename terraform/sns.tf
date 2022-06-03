@@ -1,9 +1,10 @@
 locals {
-  emails = ["abc@def.com"]
+  emails = ["princewhobong@yahoo.com"] # add a valid email address
 }
 
+# creation of sns topic
 resource "aws_sns_topic" "topic" {
-  name            = "s3-Data-check-topic"
+  name = "s3-Data-check-topic"
   delivery_policy = jsonencode({
     "http" : {
       "defaultHealthyRetryPolicy" : {
@@ -23,6 +24,8 @@ resource "aws_sns_topic" "topic" {
   })
 }
 
+
+# subscribing to sns topic
 resource "aws_sns_topic_subscription" "topic_email_subscription" {
   count     = length(local.emails)
   topic_arn = aws_sns_topic.topic.arn
@@ -30,11 +33,4 @@ resource "aws_sns_topic_subscription" "topic_email_subscription" {
   endpoint  = local.emails[count.index]
 }
 
-# resource "aws_lambda_permission" "with_sns" {
-#     statement_id = "AllowExecutionFromSNS"
-#     action = "lambda:InvokeFunction"
-#     function_name = "${aws_lambda_function.check_file_lambda.arn}"
-#     principal = "sns.amazonaws.com"
-#     source_arn = "${aws_sns_topic.topic.arn}"
-# }
 
