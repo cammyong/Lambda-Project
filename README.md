@@ -9,7 +9,7 @@ Diagram
 ![Basic StepFunction](https://user-images.githubusercontent.com/34858886/171869449-2a35a652-b58b-4fea-9c57-6f06040aed34.png)
 
 Deploy
-Since we have defined the infrastructure for an AWS Lambda and an AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below.
+Since we have defined the infrastructure for an AWS Lambda and AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below.
 
 <img width="297" alt="Screenshot 2022-06-03 at 21 27 27" src="https://user-images.githubusercontent.com/34858886/171936331-d8dc5688-4b66-4fa3-a6ea-791220da902e.png">
 
@@ -28,22 +28,15 @@ cd terraform
 ```
 * Run the following command to initialize and deploy the infrastructure.
 
-* It will perform initialization step
 ```
-terraform init
+terraform init  # To initialize
 ```  
-
- * View the execution plan of terraform
 ```
-terraform plan
+terraform plan  # View the execution plan of terraform
 ```  
-
-* Apply the infrastructure in AWS
 ```
-terraform apply  # apply
+terraform apply  # apply the infrastructure in AWS
 ``` 
-
-* Destroy the infrastructure in AWS
 ```
-terraform destroy
+terraform destroy  # Destroy the infrastructure in AWS
 ``` 
