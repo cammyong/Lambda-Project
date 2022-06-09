@@ -27,3 +27,7 @@ variable "aws_region" {
   description = "AWS Region to deploy to"
 }
 
+variable "bucket_name" {
+  description = "name of s3 bucket"
+  type        = string
+}

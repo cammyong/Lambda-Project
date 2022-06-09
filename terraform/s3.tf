@@ -1,6 +1,7 @@
 # s3 bucket 
 resource "aws_s3_bucket" "source_bucket" {
-  bucket = "${var.env_name}-src-bucket2"
+  #bucket = "${var.env_name}-src-bucket.var.bucket_name"
+  bucket = var.bucket_name
 
   force_destroy = true
 }
