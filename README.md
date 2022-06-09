@@ -10,7 +10,7 @@ Diagram 1
 ![Basic StepFunction (2)](https://user-images.githubusercontent.com/34858886/171947901-1d6f25de-3ce9-4fdc-ae72-5647baac1519.png)
 
 Diagram 2
-![Basic StepFunction](https://user-images.githubusercontent.com/34858886/172903786-606acf5c-b4ed-4e1f-a30a-a2d9c4545ad9.png)
+![Basic StepFunction (3)](https://user-images.githubusercontent.com/34858886/172904975-ed13c0d3-0749-4c93-a3b8-f618100c44e0.png)
 
 Deploy
 Since we have defined the infrastructure for an AWS Lambda and AWS Step Functions in terraform, it is time to deploy and test them. Finally the directory structure will be as below. 
