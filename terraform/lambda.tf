@@ -39,6 +39,12 @@ resource "aws_lambda_function" "report_error_lambda" {
   role             = aws_iam_role.lambda_assume_role.arn
   runtime          = "python3.8"
 
+  environment {
+    variables = {
+      sns_arn = aws_sns_topic.topic.arn
+    }
+  }
+
   lifecycle {
     create_before_destroy = true
   }
@@ -83,9 +89,11 @@ data "aws_iam_policy_document" "lambda_policy_document" {
   version = "2012-10-17"
 
   statement {
-    sid     = "LambdaPrivileges"
-    effect  = "Allow"
+    sid    = "LambdaPrivileges"
+    effect = "Allow"
     actions = [
+      "sns:*",
+      "s3:ListBucket",
       "s3:GetObject",
       "logs:CreateLogGroup",
       "logs:CreateLogStream",
@@ -94,3 +102,6 @@ data "aws_iam_policy_document" "lambda_policy_document" {
     resources = ["*"]
   }
 }
+
+
+
